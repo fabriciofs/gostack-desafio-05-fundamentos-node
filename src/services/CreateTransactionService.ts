@@ -19,13 +19,13 @@ class CreateTransactionService {
       if (total < value) {
         throw Error('Insufficient balance for this outcome transaction');
       }
-      const transaction = this.transactionsRepository.create({
-        title,
-        type,
-        value,
-      });
-      return transaction;
     }
+    const transaction = this.transactionsRepository.create({
+      title,
+      type,
+      value,
+    });
+    return transaction;
   }
 }
 
