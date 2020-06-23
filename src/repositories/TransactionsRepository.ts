@@ -6,11 +6,6 @@ interface Balance {
   total: number;
 }
 
-interface TransactionsExtract {
-  transactions: Transaction[];
-  balance: Balance;
-}
-
 class TransactionsRepository {
   private transactions: Transaction[];
 
@@ -18,8 +13,8 @@ class TransactionsRepository {
     this.transactions = [];
   }
 
-  public all(): TransactionsExtract {
-    return { transactions: this.transactions, balance: this.getBalance() };
+  public all(): Transaction[] {
+    return this.transactions;
   }
 
   public getBalance(): Balance {
